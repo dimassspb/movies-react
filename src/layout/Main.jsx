@@ -16,8 +16,10 @@ export class Main extends React.Component {
     fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
       .then((response) => response.json())
       .then((data) => this.setState({ movies: data.Search, loading: false }))
-      .catch((err) => console.error('Error:', err));
-    this.setState({ loading: false });
+      .catch((err) => {
+        console.error(err);
+        this.setState({ loading: false });
+      });
   }
 
   searchMovies = (str, type = 'all') => {
@@ -29,8 +31,10 @@ export class Main extends React.Component {
     )
       .then((response) => response.json())
       .then((data) => this.setState({ movies: data.Search, loading: false }))
-      .catch((err) => console.error('Error:', err));
-    this.setState({ loading: false });
+      .catch((err) => {
+        console.error(err);
+        this.setState({ loading: false });
+      });
   };
 
   render() {
