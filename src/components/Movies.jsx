@@ -10,7 +10,7 @@ export function Movies(props) {
       ) : (
         <h4>
           Nothing found
-          <i class="material-icons">
+          <i className="material-icons">
             sentiment_very_dissatisfied
           </i>
         </h4>
